@@ -1,0 +1,487 @@
+/* ===== FONT IMPORT ===== */
+@import "../../../Componenents/Fonts/fonts.scss";
+
+/* ===== ROOT WRAPPER (GRADIENT FOR ALL) ===== */
+.pricing-hero-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+            #7485e1,
+            #d7c0f8,
+            #e9dff7,
+            #ffffff,
+            #ffffff);
+    overflow-x: hidden;
+
+    @media (max-width: 768px) {
+        min-height: 50vh;
+    }
+}
+
+/* =========================
+   TOP HERO SECTION - EXACT SAME STYLE
+========================= */
+.pricing-hero-top {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 80px 24px 60px;
+    }
+}
+
+.pricing-hero-content {
+    text-align: center;
+    max-width: 1000px;
+    margin-top: 40px;
+    font-family: 'Heading', serif;
+}
+
+.pricing-hero-title {
+    font-size: 75px;
+    font-weight: 800;
+    line-height: 1.45;
+    position: relative;
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        font-size: 58px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 42px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 32px;
+    }
+}
+
+/* ===== HIGHLIGHTED WORD - DEFAULT (DESKTOP) ===== */
+.pricing-highlight {
+    position: relative;
+    padding: 2px 22px;
+    border: 2px solid #7a3db8;
+    border-radius: 16px;
+    color: #5e2690;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    background: rgba(122, 61, 184, 0.1);
+    cursor: default;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+        padding: 2px 12px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 2px 8px;
+    }
+}
+
+/* ===== MOBILE HIGHLIGHT - NO BG, NO BORDER ===== */
+.pricing-highlight-mobile {
+    @media (max-width: 768px) {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        color: #5e2690;
+        box-shadow: none !important;
+        /* keep the purple color */
+    }
+}
+
+/* Dots - hidden by default, show on hover (desktop only) */
+.pricing-highlight::before,
+.pricing-highlight::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #7a3db8;
+    border-radius: 50%;
+    background: #7a3db8;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.pricing-highlight::before {
+    top: -6px;
+    left: 22px;
+
+    @media (max-width: 768px) {
+        left: 12px;
+    }
+
+    @media (max-width: 480px) {
+        left: 8px;
+    }
+}
+
+.pricing-highlight::after {
+    bottom: -6px;
+    right: 22px;
+
+    @media (max-width: 768px) {
+        right: 12px;
+    }
+
+    @media (max-width: 480px) {
+        right: 8px;
+    }
+}
+
+/* Hide dots on mobile for highlighted word */
+.pricing-highlight-mobile::before,
+.pricing-highlight-mobile::after {
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+/* Show dots on hover (desktop only) */
+.pricing-highlight:hover::before,
+.pricing-highlight:hover::after {
+    opacity: 1;
+}
+
+/* Additional hover effect (desktop only) */
+.pricing-highlight:hover {
+    background: rgba(122, 61, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Disable hover transform on mobile for highlighted word */
+.pricing-highlight-mobile:hover {
+    @media (max-width: 768px) {
+        transform: none !important;
+    }
+}
+
+/* ===== SUBTITLE ===== */
+.pricing-hero-subtitle {
+    margin-top: 18px;
+    font-size: 22px;
+    font-family: 'Content', serif;
+    position: relative;
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+    }
+}
+
+.pricing-hero-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #5e2690, transparent);
+    transition: width 0.6s ease;
+}
+
+.pricing-hero-subtitle:hover::after {
+    width: 200px;
+}
+
+/* ===== HERO BUTTON – EXACT SAME STYLE ===== */
+.pricing-hero-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 195px;
+    height: 60px;
+    background: #5e2690;
+    border: 2px solid #5e2690;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Content', serif;
+    outline: none;
+    margin-top: 28px;
+}
+
+.pricing-hero-btn-fill {
+    position: absolute;
+    right: 3px;
+    top: 50.5%;
+    transform: translateY(-50%);
+    height: 53px;
+    width: 50px;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.pricing-hero-btn:hover .pricing-hero-btn-fill {
+    width: calc(100% - 4px);
+    right: 2px;
+}
+
+.pricing-hero-btn-text {
+    position: relative;
+    z-index: 2;
+    padding-left: 26px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: color 0.4s ease 0.25s;
+    white-space: nowrap;
+}
+
+.pricing-hero-btn:hover .pricing-hero-btn-text {
+    color: #5e2690;
+}
+
+.pricing-hero-btn-arrow {
+    position: relative;
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #5e2690;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 2px;
+    transition: transform 0.2s ease;
+}
+
+.pricing-hero-btn:hover .pricing-hero-btn-arrow {
+    background: #ffffff;
+    color: #5e2690;
+    transform: rotate(-45deg);
+}
+
+/* =========================
+   RESPONSIVE STYLES
+========================= */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .pricing-hero-top {
+        height: 85vh;
+        padding: 0 40px;
+    }
+
+    .pricing-hero-title {
+        font-size: 58px;
+    }
+
+    .pricing-hero-subtitle {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .pricing-hero-btn {
+        width: 170px;
+        height: 52px;
+    }
+
+    .pricing-hero-btn-text {
+        font-size: 15px;
+        padding-left: 22px;
+    }
+
+    .pricing-hero-btn-arrow,
+    .pricing-hero-btn-fill {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-hero-top {
+        height: auto;
+        padding: 80px 24px 60px;
+    }
+
+    .pricing-hero-title {
+        font-size: 42px;
+    }
+
+    .pricing-hero-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pricing-hero-btn {
+        width: 170px;
+        height: 48px;
+    }
+
+    .pricing-hero-btn-text {
+        font-size: 14px;
+        padding-left: 20px;
+    }
+
+    .pricing-hero-btn-arrow,
+    .pricing-hero-btn-fill {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-hero-top {
+        padding: 60px 20px 50px;
+    }
+
+    .pricing-hero-title {
+        font-size: 32px;
+    }
+
+    .pricing-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .pricing-hero-btn {
+        width: 130px;
+        height: 44px;
+    }
+
+    .pricing-hero-btn-text {
+        font-size: 13px;
+        padding-left: 10px;
+    }
+
+    .pricing-hero-btn-arrow,
+    .pricing-hero-btn-fill {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   REDUCE MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+    .pricing-hero-btn,
+    .pricing-highlight,
+    .pricing-hero-subtitle {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =========================
+   TABLET MEDIA QUERY (800px - 1200px)
+   FOR PRICING HERO - 3 LINES HEADING
+========================= */
+@media (min-width: 800px) and (max-width: 1200px) {
+
+    .pricing-hero-wrapper {
+        min-height: 75vh;
+    }
+
+    /* ===== TOP HERO SECTION ===== */
+    .pricing-hero-top {
+        height: 65vh;
+        padding: 0 40px;
+    }
+
+    .pricing-hero-title {
+        font-size: 58px;
+    }
+
+    .pricing-hero-subtitle {
+        font-size: 20px;
+    }
+
+    /* ===== HERO BUTTON ===== */
+    .pricing-hero-btn {
+        width: 170px;
+        height: 55px;
+    }
+
+    .pricing-hero-btn-text {
+        font-size: 15px;
+        padding-left: 22px;
+    }
+
+    .pricing-hero-btn-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .pricing-hero-btn-fill {
+        right: 3px;
+        top: 49.7%;
+        height: 45px;
+        width: 45px;
+    }
+
+    /* ===== HIGHLIGHT WORD STYLING ===== */
+    .pricing-highlight {
+        padding: 2px 18px;
+    }
+
+    /* Dots positioning for tablet */
+    .pricing-highlight::before {
+        top: -6px;
+        left: 18px;
+    }
+
+    .pricing-highlight::after {
+        bottom: -6px;
+        right: 18px;
+    }
+
+    /* SHOW tablet line breaks in tablet view */
+    .tablet-br-1,
+    .tablet-br-2,
+    .tablet-br-3,
+    .tablet-br-4 {
+        display: inline !important;
+    }
+}
+
+/* Default - hide all tablet line breaks on other screens */
+.tablet-br-1,
+.tablet-br-2,
+.tablet-br-3,
+.tablet-br-4 {
+    display: none;
+}
+
+/* Mobile line breaks - only show on mobile */
+.mobile-br {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: inline;
+    }
+}
+
+/* Desktop-only elements */
+.desktop-only {
+    display: inline;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}

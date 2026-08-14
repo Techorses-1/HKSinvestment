@@ -1,0 +1,215 @@
+
+@import "../../Componenents/Fonts/fonts.scss" ;
+// @import "../../Componenents/Fonts/fonts.scss"; 
+
+.nf-wrapper {
+  min-height: 60vh;
+  background: linear-gradient(135deg, #f7f5fb 60%, #efe8fb);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 20px;
+}
+
+/* HUGE BACKGROUND TEXT */
+.nf-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 320px;
+  font-family: "Heading", serif;
+  color: #7a3db8;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.08;
+  white-space: nowrap;
+}
+
+.nf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* LEFT */
+.nf-content h1 {
+  font-family: "Heading", serif;
+  font-size: 48px;
+  margin-bottom: 16px;
+  margin-top: 0px;
+  color: #1a1a1a;
+}
+
+.nf-content p {
+  font-family: "Content", serif;
+  font-size: 17px;
+  color: #666;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+.nf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #efe8fb;
+  border: 1px solid #7a3db8;
+  color: #7a3db8;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-family: "Content", serif;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 50px;
+  background: #7a3db8;
+  color: #fff;
+  font-family: "Content", serif;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nf-btn:hover {
+  background: #5e2690;
+  gap: 16px;
+}
+
+/* RIGHT VISUAL - UPDATED PROFIT STYLES */
+.nf-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.investment-404 {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+.perfect-pie {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(46, 125, 50, 0.25));
+}
+
+.perfect-pie path {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Floating percentage labels - profit/green theme */
+.floating-label {
+  position: absolute;
+  font-family: "Heading", serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e7d32;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 14px;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(46, 125, 50, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(46, 125, 50, 0.3);
+  pointer-events: none;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.floating-label.profit {
+  color: #2e7d32;
+  border-color: rgba(46, 125, 50, 0.4);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Center circle animation */
+@keyframes centerPulse {
+  0%, 100% { r: 45; }
+  50% { r: 48; }
+}
+
+.perfect-pie circle[fill="white"] {
+  animation: centerPulse 4s ease-in-out infinite;
+}
+
+/* Subtle glow for the perfect circle */
+.perfect-pie {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 20px 40px rgba(46, 125, 50, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 25px 50px rgba(46, 125, 50, 0.4));
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .nf-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .nf-content p {
+    margin: 0 auto 30px;
+  }
+
+  .nf-visual {
+    margin-top: 40px;
+  }
+
+  .floating-label {
+    font-size: 16px;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nf-content h1 {
+    font-size: 36px;
+  }
+
+  .nf-bg-text {
+    font-size: 200px;
+  }
+
+  .floating-label {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+  
+  .perfect-pie text {
+    font-size: 24px;
+  }
+}
+
+/* Hover effect */
+.investment-404:hover .perfect-pie path {
+  filter: brightness(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Additional success indicators */
+.plus-sign {
+  fill: #2e7d32;
+  font-weight: bold;
+}

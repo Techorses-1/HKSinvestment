@@ -1,0 +1,571 @@
+/* =========================
+   GENERAL INQUIRY MODAL STYLES
+========================= */
+.inquiry-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+}
+
+.inquiry-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    max-width: 650px;
+    height: fit-content;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    z-index: 9999;
+    box-shadow: 0 25px 50px rgba(94, 38, 144, 0.2);
+    border: 1px solid #e9dff7;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        width: 90%;
+        max-width: 90%;
+        padding: 30px;
+    }
+
+    @media (max-width: 480px) {
+        width: 85%;
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+}
+
+.inquiry-modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f5f0fd;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #5e2690;
+    font-size: 20px;
+    transition: all 0.2s ease;
+    z-index: 10000;
+
+    &:hover {
+        background: #5e2690;
+        color: white;
+        transform: rotate(90deg);
+    }
+}
+
+.inquiry-modal-title {
+    font-size: 32px;
+    font-family: 'Heading', serif;
+    color: #5e2690;
+    margin-bottom: 12px;
+    margin-top: 0px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 24px;
+    }
+}
+
+.inquiry-modal-subtitle {
+    font-size: 16px;
+    font-family: 'Content', serif;
+    color: #666;
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+/* =========================
+   INQUIRY FORM STYLES
+========================= */
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inquiry-form-row-full {
+    width: 100%;
+}
+
+.inquiry-form-row-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+
+    @media (max-width: 640px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.inquiry-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.inquiry-form-group label {
+    font-family: 'Content', serif;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.required {
+    color: #ff4757;
+}
+
+.inquiry-form-input,
+.inquiry-form-select,
+.inquiry-form-textarea {
+    padding: 14px 18px;
+    border: 2px solid #e0d0f0;
+    border-radius: 12px;
+    font-family: 'Content', serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #faf7ff;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: none;
+        border-color: #5e2690;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(94, 38, 144, 0.1);
+    }
+
+    &.error {
+        border-color: #ff4757;
+        background: #fff5f5;
+    }
+}
+
+.inquiry-form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235e2690' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+}
+
+.inquiry-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.error-message {
+    color: #ff4757;
+    font-family: 'Content', serif;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* ============================================= */
+/* ===== PHONE WITH MANUAL COUNTRY DROPDOWN ===== */
+/* ============================================= */
+.phone-group {
+    position: relative;
+}
+
+.phone-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    border: 2px solid #e0d0f0;
+    border-radius: 12px;
+    background: #faf7ff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+    &:focus-within {
+        border-color: #5e2690;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(94, 38, 144, 0.1);
+    }
+
+    &.error {
+        border-color: #ff4757;
+    }
+
+    /* Dropdown Selection Anchor Element Box */
+    .country-dropdown {
+        flex-shrink: 0;
+
+        .country-select-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 10px 14px 16px;
+            background: transparent;
+            border: none;
+            border-right: 2px solid #e0d0f0;
+            cursor: pointer;
+            font-size: 15px;
+            font-family: 'Content', serif;
+            color: #333;
+            transition: all 0.3s ease;
+            min-width: 90px;
+            height: 100%;
+            box-sizing: border-box;
+
+            &:hover {
+                background: #f5f0fd;
+            }
+
+            .country-flag {
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            .country-code {
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .dropdown-arrow {
+                font-size: 11px;
+                color: #5e2690;
+                transition: transform 0.3s ease;
+                margin-left: 2px;
+
+                &.open {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        /* Popover Search Window Module Panel */
+        .country-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border: 2px solid #e0d0f0;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            .country-search {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 14px;
+                border-bottom: 1px solid #e0d0f0;
+
+                .search-icon {
+                    color: #999;
+                    font-size: 16px;
+                    flex-shrink: 0;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 8px 0;
+                    border: none;
+                    outline: none;
+                    font-size: 14px;
+                    font-family: 'Content', serif;
+                    background: transparent;
+
+                    &::placeholder {
+                        color: #999;
+                    }
+                }
+            }
+
+            .country-list {
+                max-height: 200px;
+                overflow-y: auto;
+                padding: 4px 0;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #f5f5f5;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #5e2690;
+                    border-radius: 4px;
+                }
+
+                .country-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 16px;
+                    width: 100%;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-family: 'Content', serif;
+                    color: #333;
+                    transition: all 0.2s ease;
+                    text-align: left;
+
+                    &:hover {
+                        background: #faf7ff;
+                    }
+
+                    &.active {
+                        background: #f5f0fd;
+                        color: #5e2690;
+                    }
+
+                    .country-flag {
+                        font-size: 18px;
+                        flex-shrink: 0;
+                    }
+
+                    .country-name {
+                        flex: 1;
+                    }
+
+                    .country-code {
+                        color: #5e2690;
+                        font-weight: 600;
+                        font-size: 13px;
+                    }
+                }
+
+                .no-results {
+                    padding: 20px;
+                    text-align: center;
+                    color: #999;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    /* Core Number Form Text Input Element Node */
+    .phone-number-input {
+        flex: 1;
+        padding: 14px 18px;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        font-family: 'Content', serif;
+        color: #333;
+        background: transparent;
+        min-width: 0;
+        box-sizing: border-box;
+
+        &::placeholder {
+            color: #999;
+        }
+    }
+}
+
+.phone-hint {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #f39c12;
+    font-size: 13px;
+    font-family: 'Content', serif;
+    margin-top: 6px;
+
+    svg {
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+}
+
+/* =========================
+   SUBMIT BUTTON STYLES
+========================= */
+.inquiry-submit-btn {
+    background: #5e2690;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-family: 'Content', serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:hover:not(:disabled) {
+        background: #4a1f73;
+        color: white;
+        box-shadow: 0 10px 25px rgba(94, 38, 144, 0.3);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Spinning Loader Animation Layout Block */
+    .spinner {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #ffffff;
+        animation: spin-loader 0.8s linear infinite;
+        margin-left: 4px;
+    }
+}
+
+@keyframes spin-loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.inquiry-submit-arrow {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.inquiry-submit-btn:hover .inquiry-submit-arrow {
+    transform: translateX(4px);
+}
+
+/* ======================================= */
+/* RESPONSIVE DESIGN VIEWPORTS (<=768PX)   */
+/* ======================================= */
+@media (max-width: 768px) {
+
+    /* Prevent wrapping, preserve continuous grid structural integrity */
+    .phone-input-wrapper {
+        flex-wrap: nowrap;
+        border-radius: 12px;
+        background: #faf7ff;
+
+        .country-dropdown {
+            flex: 0 0 auto;
+            width: auto;
+            position: relative;
+
+            .country-select-btn {
+                width: auto;
+                padding: 12px 10px 12px 14px;
+                border-right: 2px solid #e0d0f0;
+                min-height: 48px;
+                white-space: nowrap;
+
+                .country-flag {
+                    font-size: 18px;
+                }
+
+                .country-code {
+                    font-size: 13px;
+                }
+
+                .dropdown-arrow {
+                    font-size: 10px;
+                }
+            }
+
+            /* Responsive Center Target Modal Windows Screen Overrides */
+            .country-dropdown-menu {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
+                min-width: 85%;
+                max-width: 380px;
+                max-height: 75vh;
+                border-radius: 16px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                border: 2px solid #e0d0f0;
+
+                .country-list {
+                    max-height: 55vh;
+                }
+            }
+        }
+
+        .phone-number-input {
+            flex: 1;
+            padding: 12px 14px;
+            font-size: 14px;
+            width: auto;
+            min-width: 0;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .phone-input-wrapper {
+        .country-dropdown {
+            .country-select-btn {
+                padding: 10px 8px 10px 12px;
+                min-height: 44px;
+            }
+        }
+
+        .phone-number-input {
+            padding: 10px 12px;
+        }
+    }
+}
+
+/* =========================
+   REDUCE MOTION OVERRIDES
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+    .inquiry-modal,
+    .inquiry-modal-overlay,
+    .inquiry-submit-btn,
+    .inquiry-submit-arrow {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .inquiry-submit-btn:hover .inquiry-submit-arrow {
+        transform: none !important;
+    }
+}

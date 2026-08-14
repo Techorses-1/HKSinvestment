@@ -1,0 +1,837 @@
+@import "../../../Componenents/Fonts/fonts.scss";
+
+/* =========================
+   SECTION
+========================= */
+
+.main-about {
+    background: #f7f5fb;
+    // width: 100%;  
+    overflow-x: hidden;
+
+}
+
+.about-section {
+    padding: 50px 40px 100px 0px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.about-header {
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: 10px;
+}
+
+.about-pill {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #efe8fb;
+    border: 2px solid #7a3db8;
+    border-radius: 50px;
+    color: #7a3db8;
+    margin-bottom: 15px;
+    font-family: 'SubHeading', serif;
+}
+
+.about-header h2 {
+    font-size: 42px;
+    font-family: 'Heading', serif;
+    margin-top: 00px;
+}
+
+/* =========================
+   CONTENT LAYOUT
+========================= */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* =========================
+   LEFT VISUAL
+========================= */
+.about-visual {
+    display: flex;
+    justify-content: center;
+}
+
+/* =========================
+   CIRCLES
+========================= */
+.circle-wrap {
+    position: relative;
+    width: 420px;
+    height: 420px;
+}
+
+/* OUTER CIRCLE */
+.circle-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #efe8fb;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* SECOND CIRCLE */
+.circle-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 30px;
+    background: #e6dcf7;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* THIRD CIRCLE */
+.circle-mid {
+    position: absolute;
+    inset: 60px;
+    background: #ddd1f3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+/* INNER CIRCLE (IMAGE HOLDER) */
+.circle-inner {
+    position: absolute;
+    inset: 60px;
+    background: #d9ccf3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.circle-inner img {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    z-index: 5;
+}
+
+/* =========================
+   TAGS
+========================= */
+.tag {
+    position: absolute;
+    background: #efe8fb;
+    border: 2px solid #7a3db8;
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 14px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-family: 'Heading', serif;
+    color: #7a3db8;
+    z-index: 6;
+}
+
+/* TAG POSITIONS */
+.shares {
+    left: -40px;
+    top: 28%;
+}
+
+.sell {
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.yield {
+    left: -48px;
+    bottom: 30%;
+}
+
+.trends {
+    bottom: -15px;
+    left: 25%;
+    transform: translateX(-50%);
+}
+
+.finance {
+    right: -50px;
+    top: 30%;
+}
+
+.invest {
+    right: -50px;
+    bottom: 28%;
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+.about-text {
+    text-align: right;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-family: 'Content', serif;
+}
+
+.about-icon-wrapper {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.about-shield-svg {
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+/* =========================
+   BUTTON - DESKTOP
+   RIGHT TO LEFT ANIMATION - PERFECT SPACING
+   SAME HEIGHT/WIDTH AS CURRENT
+========================= */
+.about-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 170px;
+    height: 56px;
+    background: #5e2690;
+    border: 2px solid #5e2690;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Content', serif;
+}
+
+/* WHITE FILL - STARTS AT ARROW (RIGHT SIDE) */
+.about-btn-fill {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 49px;
+    width: 46px;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.about-btn:hover .about-btn-fill {
+    width: calc(100% - 4px);
+    right: 2px;
+}
+
+.about-btn-text {
+    position: relative;
+    z-index: 2;
+    padding-left: 26px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: color 0.4s ease 0.25s;
+    white-space: nowrap;
+}
+
+.about-btn:hover .about-btn-text {
+    color: #5e2690;
+}
+
+.about-btn-arrow {
+    position: relative;
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #5e2690;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 2px;
+    transition: transform 0.2s ease;
+}
+
+.about-btn:hover .about-btn-arrow {
+    background: #ffffff;
+    color: #5e2690;
+    transform: rotate(-45deg);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+/* Circle pulse effect */
+.circle-wrap::before,
+.circle-wrap::after,
+.circle-mid,
+.circle-inner {
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.circle-wrap::before {
+    animation-name: pulseOuter;
+    animation-delay: 0s;
+}
+
+.circle-wrap::after {
+    animation-name: pulseMiddle;
+    animation-delay: 0.2s;
+}
+
+.circle-mid {
+    animation-name: pulseInner;
+    animation-delay: 0.4s;
+}
+
+@keyframes pulseOuter {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseMiddle {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseInner {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Image animation */
+.circle-inner img {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* =========================
+   RESPONSIVE: TABLET (768px - 1024px)
+   MATCHING MOBILE STYLE - SHIELD ICON HIDDEN, BUTTON CENTERED
+========================= */
+@media (min-width: 800px) and (max-width: 1200px) {
+    .about-section {
+        padding: 80px 40px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Hide shield icon in tablet like mobile */
+    .about-shield-svg {
+        display: none !important;
+    }
+
+    .about-text {
+        text-align: left;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .about-text p {
+        text-align: left;
+        font-size: 16px;
+        /* Match mobile font size */
+        line-height: 1.6;
+        /* Match mobile line height */
+        text-align: justify;
+        /* Match mobile text justify */
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    /* Remove icon wrapper styles since icon is hidden */
+    .about-icon-wrapper {
+        display: none;
+        /* Hide the wrapper since icon is hidden */
+    }
+
+    .circle-wrap {
+        width: 380px;
+        height: 380px;
+        margin: 0 auto;
+    }
+
+    /* Disable animations like mobile */
+    .circle-wrap::before,
+    .circle-wrap::after,
+    .circle-mid,
+    .circle-inner {
+        animation: none !important;
+    }
+
+    /* Adjust tag positions for tablet */
+    .tag {
+        padding: 4px 10px;
+        font-size: 12px;
+        transition: none !important;
+    }
+
+    .shares {
+        left: -20px;
+        top: 25%;
+    }
+
+    .sell {
+        top: -20px;
+    }
+
+    .yield {
+        left: -28px;
+        bottom: 25%;
+    }
+
+    .trends {
+        bottom: -18px;
+    }
+
+    .finance {
+        right: -30px;
+        top: 25%;
+    }
+
+    .invest {
+        right: -30px;
+        bottom: 25%;
+    }
+
+    .about-header {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+
+    .about-header h2 {
+        font-size: 32px;
+        /* Slightly smaller for tablet */
+        line-height: 1.3;
+    }
+
+    .about-pill {
+        padding: 5px 14px;
+        font-size: 14px;
+    }
+
+    /* BUTTON - TABLET - CENTERED like mobile */
+    .about-btn {
+        width: 170px;
+        height: 52px;
+        margin: 20px auto 0 auto;
+        /* Changed to auto for centering */
+        display: flex;
+        /* Changed to flex for centering */
+    }
+
+    .about-btn-text {
+        font-size: 15px;
+        padding-left: 22px;
+    }
+
+    .about-btn-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+        margin-right: 2px;
+    }
+
+    .about-btn-fill {
+        height: 42px;
+        width: 42px;
+        right: 2px;
+    }
+
+    .about-btn:hover .about-btn-fill {
+        width: calc(100% - 4px);
+        right: 2px;
+    }
+}
+
+/* =========================
+   RESPONSIVE: MOBILE (up to 768px)
+   SHIELD ICON ALIGNED TO LEFT & BUTTON CENTERED
+========================= */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .about-header {
+        margin-bottom: 50px;
+    }
+
+    .about-header h2 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+
+    }
+
+    .about-visual {
+        order: 2;
+    }
+
+    .about-text {
+        order: 3;
+        text-align: left;
+        /* CHANGED: Align left for mobile */
+    }
+
+    .about-text p {
+        text-align: left;
+        /* CHANGED: Left align text */
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    /* SHIELD ICON - LEFT ALIGNED */
+    .about-icon-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        /* CHANGED: Align to left */
+        margin-bottom: 16px;
+        width: 100%;
+    }
+
+    .circle-wrap {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .circle-wrap::before,
+    .circle-wrap::after,
+    .circle-mid,
+    .circle-inner {
+        animation: none !important;
+    }
+
+    .circle-inner img {
+        width: 140px;
+        height: 170px;
+    }
+
+    .tag {
+        padding: 4px 10px;
+        font-size: 12px;
+        transition: none !important;
+    }
+
+    .shares {
+        left: -25px;
+        top: 25%;
+    }
+
+    .sell {
+        top: -20px;
+    }
+
+    .yield {
+        left: -28px;
+        bottom: 25%;
+    }
+
+    .trends {
+        bottom: -18px;
+    }
+
+    .finance {
+        right: -30px;
+        top: 25%;
+    }
+
+    .invest {
+        right: -30px;
+        bottom: 25%;
+    }
+
+    /* BUTTON - MOBILE - CENTERED */
+    .about-btn {
+        width: 160px;
+        height: 48px;
+        margin: 0 auto;
+        /* ← CHANGED: Center the button */
+        display: flex;
+        /* ← CHANGED: Ensure flex for centering */
+    }
+
+    .about-btn-text {
+        font-size: 14px;
+        padding-left: 20px;
+    }
+
+    .about-btn-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        margin-right: 2px;
+    }
+
+    .about-btn-fill {
+        height: 38px;
+        width: 38px;
+        right: 2px;
+    }
+
+    .about-btn:hover .about-btn-fill {
+        width: calc(100% - 4px);
+        right: 2px;
+    }
+}
+
+/* =========================
+   RESPONSIVE: SMALL MOBILE (up to 480px)
+   SHIELD ICON LEFT ALIGNED & BUTTON CENTERED
+========================= */
+@media (max-width: 480px) {
+    .main-about {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .about-section {
+        padding: 50px 16px;
+        /* symmetrical padding */
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-header h2 {
+        font-size: 20px;
+    }
+
+    .about-pill {
+        padding: 5px 14px;
+        font-size: 14px;
+    }
+
+    .circle-wrap {
+        width: 240px;
+        height: 240px;
+    }
+
+    .circle-inner img {
+        width: 120px;
+        height: 150px;
+    }
+
+    .tag {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    .shares {
+        left: -35px;
+    }
+
+    .yield {
+        left: -22px;
+    }
+
+    .finance {
+        right: -24px;
+    }
+
+    .invest {
+        right: -50px;
+    }
+
+    .trends {
+        bottom: -10px;
+        left: 30%;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        text-align: justify !important;
+        /* CHANGED: Left align */
+    }
+
+    /* SHIELD ICON - LEFT ALIGNED */
+    .about-icon-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        /* CHANGED: Align to left */
+        margin-bottom: 14px;
+    }
+
+    /* BUTTON - SMALL MOBILE - CENTERED */
+    .about-btn {
+        width: 140px;
+        height: 44px;
+        margin: 0 auto;
+        /* ← CHANGED: Center the button */
+        display: flex;
+        /* ← CHANGED: Ensure flex for centering */
+    }
+
+    .about-btn-text {
+        font-size: 13px;
+        padding-left: 18px;
+    }
+
+    .about-btn-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+        margin-right: 2px;
+    }
+
+    .about-btn-fill {
+        height: 34px;
+        width: 34px;
+        right: 2px;
+    }
+
+    .about-btn:hover .about-btn-fill {
+        width: calc(100% - 4px);
+        right: 2px;
+    }
+}
+
+/* =========================
+   REDUCE MOTION PREFERENCES
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+    .circle-wrap::before,
+    .circle-wrap::after,
+    .circle-mid,
+    .circle-inner,
+    .tag,
+    .circle-inner img,
+    .about-btn,
+    .about-btn-fill,
+    .about-btn-text,
+    .about-btn-arrow,
+    .about-shield-svg,
+    .about-icon-wrapper {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .about-btn:hover {
+        transform: none !important;
+    }
+
+    .about-btn:hover .about-btn-fill {
+        width: 46px !important;
+        right: 2px !important;
+    }
+
+    .about-btn:hover .about-btn-text {
+        color: #ffffff !important;
+    }
+
+    .about-btn:hover .about-btn-arrow {
+        background: #ffffff !important;
+        color: #5e2690 !important;
+        transform: none !important;
+    }
+
+    .tag:hover {
+        transform: none !important;
+        background: #efe8fb !important;
+        border-color: #7a3db8 !important;
+    }
+}
+
+/* =========================
+   LARGE SCREENS (1900px - 2600px)
+========================= */
+@media screen and (min-width: 1900px) and (max-width: 2600px) {
+    .about-section {
+        max-width: 1700px;
+        /* Increased from 1400px */
+    }
+
+    .about-visual {
+        justify-content: center;
+    }
+
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr;
+        gap: 80px;
+
+    }
+}

@@ -1,0 +1,951 @@
+/* ===== FONT IMPORT ===== */
+@import "../../../Componenents/Fonts/fonts.scss";
+
+/* ===== ROOT WRAPPER (GRADIENT FOR ALL) ===== */
+.hero-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+            #7485e1,
+            #d7c0f8,
+            #e9dff7,
+            #ffffff,
+            #ffffff);
+    overflow-x: hidden;
+
+    @media (max-width: 768px) {
+
+        min-height: 50vh;
+    }
+
+
+}
+
+/* =========================
+   TOP HERO SECTION - COMPLETELY UNCHANGED
+========================= */
+.hero-top {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 1000px;
+    margin-top: 40px;
+    font-family: 'Heading', serif;
+}
+
+.hero-title {
+    font-size: 75px;
+    font-weight: 800;
+    line-height: 1.45;
+    position: relative;
+}
+
+.financial-highlight {
+    position: relative;
+    padding: 2px 22px;
+    border: 2px solid #7a3db8;
+    border: none;
+    border-radius: 16px;
+    color: #5e2690;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    background: #7a3db81a;
+    background: rgba(122, 61, 184, 0.1);
+}
+
+.financial-highlight::before,
+.financial-highlight::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #7a3db8;
+    border-radius: 50%;
+    background: #7a3db8;
+    transition: all 0.3s ease;
+}
+
+.financial-highlight::before {
+    top: -6px;
+    left: 22px;
+    display: none;
+}
+
+.financial-highlight::after {
+    bottom: -6px;
+    right: 22px;
+    display: none;
+}
+
+.financial-highlight:hover {
+    background: rgba(122, 61, 184, 0.1);
+}
+
+.hero-subtitle {
+    margin-top: 18px;
+    font-size: 22px;
+    font-family: 'Content', serif;
+    position: relative;
+}
+
+.hero-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #5e2690, transparent);
+    transition: width 0.6s ease;
+}
+
+.hero-subtitle:hover::after {
+    width: 200px;
+}
+
+/* ===== HERO BUTTON – EXACT SAME STYLE AS CTA BUTTON ===== */
+.hero-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 320px;
+    height: 60px;
+    background: #5e2690;
+    border: 2px solid #5e2690;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Content', serif;
+    outline: none;
+    margin-top: 28px;
+}
+
+.hero-btn-fill {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 51px;
+    width: 50px;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.hero-btn:hover .hero-btn-fill {
+    width: calc(100% - 4px);
+    right: 2px;
+}
+
+.hero-btn-text {
+    position: relative;
+    z-index: 2;
+    padding-left: 26px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: color 0.4s ease 0.25s;
+    white-space: nowrap;
+}
+
+.hero-btn:hover .hero-btn-text {
+    color: #5e2690;
+}
+
+.hero-btn-arrow {
+    position: relative;
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #5e2690;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 2px;
+    transition: transform 0.2s ease;
+}
+
+.hero-btn:hover .hero-btn-arrow {
+    background: #ffffff;
+    color: #5e2690;
+    transform: rotate(-45deg);
+}
+
+/* =========================
+   BOTTOM SECTION - COMPLETELY FIXED WITH ALL CHANGES
+========================= */
+.hero-bottom-section {
+    padding: 40px 0 0;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.hero-bottom-bg {
+    width: 65%;
+    background: #e7ddf6;
+    border-radius: 40px 40px 0 0;
+    padding: 40px 40px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bottom-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(94, 38, 144, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(122, 61, 184, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ===== GRID WITH EQUAL GAP BETWEEN ALL COLUMNS ===== */
+.hero-bottom-grid {
+    display: grid;
+    grid-template-columns: 0.4fr 0.3fr 0.5fr;
+    /* CHANGED: Col1 & Col2 both 0.5fr for equal width */
+    gap: 40px;
+    /* KEPT: Same gap value */
+    align-items: stretch;
+}
+
+/* ===== COLUMN 1 - TWO INDEPENDENT DIVS STACKED ===== */
+.hero-bottom-col-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+/* COIN BOX - REMOVED ANIMATION */
+.hero-coin-box {
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 26px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(94, 38, 144, 0.1);
+}
+
+.hero-coin-box:hover {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(94, 38, 144, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-coin-box img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    /* REMOVED: animation */
+}
+
+/* TEXT BOX - NOW TOUCHES BOTTOM */
+.hero-text-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px 30px 0 0;
+    padding: 18px 60px 0px;
+    /* CHANGED: bottom padding removed (was 10px, now 0px) */
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(94, 38, 144, 0.1);
+    flex: 1;
+    display: block;
+    max-height: 200px;
+    margin-bottom: 0;
+    /* ENSURE: No margin at bottom */
+}
+
+.hero-text-box:hover {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    // transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(94, 38, 144, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* QUOTE ICON - SMALLER 60-70px */
+.quote-mark {
+    position: absolute;
+    top: 8px;
+    left: 30px;
+    line-height: 1;
+    color: #5d1d95;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.quote-mark svg {
+    font-size: 70px;
+    color: #5d1d95;
+}
+
+/* TEXT PARAGRAPH - COMPACT */
+.hero-text-box p {
+    position: relative;
+    z-index: 2;
+    font-size: 23px;
+    margin: 0 0 0 0;
+    /* CHANGED: Remove bottom margin */
+    letter-spacing: 0.3px;
+    font-family: 'Content', serif;
+    transition: all 0.3s ease;
+    line-height: 1.35;
+    white-space: pre-line;
+    text-align: left;
+    padding-bottom: 0;
+    /* ENSURE: No padding at bottom */
+}
+
+.hero-text-box:hover p {
+    transform: scale(1.02);
+}
+
+/* ===== COLUMN 2 - BAR IMAGE WITH GLASS (NARROWER) - REMOVED ANIMATION ===== */
+.hero-bottom-col-image {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+.hero-bottom-fixed-image {
+    width: 100%;
+    height: 100%;
+    max-height: 280px;
+    min-height: 260px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px 30px 0 0;
+    padding: 12px 12px 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: visible;
+    box-shadow: 0 8px 32px rgba(94, 38, 144, 0.1);
+    /* REMOVED: animation variants */
+}
+
+.hero-bottom-fixed-image:hover {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    // transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(94, 38, 144, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-bottom-fixed-image img {
+    width: 100%;
+    height: 130%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    transform: translateY(-20px);
+    /* REMOVED: hover animation from image itself */
+}
+
+.hero-bottom-fixed-image:hover img {
+    transform: translateY(-25px);
+    /* KEPT: hover effect */
+}
+
+/* ===== COLUMN 3 - BAR CHART WITH GLASS (TOUCHES BOTTOM) ===== */
+.hero-bottom-col-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    margin-left: 30px;
+}
+
+.full-height {
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    min-height: 260px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px 30px 0 0;
+    padding: 0;
+    /* KEPT: No padding */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(94, 38, 144, 0.1);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+
+}
+
+.full-height:hover {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    // transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(94, 38, 144, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-bottom-bar-chart {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin: 0;
+    padding: 50px 20px 0px 20px;
+    /* KEPT: bottom padding 0, top padding for numbers */
+}
+
+.hero-bottom-bar {
+    flex: 1;
+    border-radius: 8px 8px 0 0;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 4px;
+    margin-bottom: 0;
+    /* ENSURE: No margin at bottom */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.hero-bottom-bar:hover {
+    transform: scaleY(1.03);
+    transform-origin: bottom;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-bottom-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.hero-bottom-bar:hover::after {
+    left: 100%;
+}
+
+.hero-bottom-bar1 {
+    background: rgba(214, 198, 247, 0.9);
+}
+
+.hero-bottom-bar2 {
+    background: rgba(194, 170, 240, 0.9);
+}
+
+.hero-bottom-bar3 {
+    background: rgba(168, 139, 231, 0.9);
+}
+
+.hero-bottom-bar4 {
+    background: rgba(122, 61, 184, 0.9);
+}
+
+.hero-bottom-bar5 {
+    background: rgba(94, 38, 144, 0.9);
+}
+
+/* ===== MAKE ALL COLUMNS SAME HEIGHT ===== */
+.hero-bottom-grid {
+    align-items: stretch;
+}
+
+.hero-bottom-col-image,
+.hero-bottom-col-right,
+.hero-bottom-col-stack {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ===== ENSURE COIN AND TEXT DIVS HAVE SAME WIDTH ===== */
+.hero-coin-box,
+.hero-text-box {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===== WORD SLIDER - UNCHANGED ===== */
+.word-slider-wrapper {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 1.45;
+}
+
+.word-slider-wrapper .loader {
+    color: rgb(124, 124, 124);
+    font-family: "Heading", sans-serif;
+    font-weight: 700;
+    font-size: inherit;
+    box-sizing: content-box;
+    height: 1.2em;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.word-slider-wrapper .words {
+    overflow: hidden;
+    position: relative;
+    height: 1.2em;
+}
+
+.word-slider-wrapper .word {
+    display: block;
+    height: 1.2em;
+    color: #5e2690;
+    animation: spin_words 8s infinite;
+    font-size: inherit;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+@keyframes spin_words {
+    0% {
+        transform: translateY(0%);
+    }
+
+    33.33% {
+        transform: translateY(-100%);
+    }
+
+    66.66% {
+        transform: translateY(-200%);
+    }
+
+    100% {
+        transform: translateY(-300%);
+    }
+}
+
+/* =========================
+   TABLET RESPONSIVE (769px - 1024px)
+========================= */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .hero-top {
+        height: 60vh;
+        padding: 0 40px;
+    }
+
+    .hero-title {
+        font-size: 58px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    /* BOTTOM SECTION */
+    .hero-bottom-bg {
+        width: 85%;
+        padding: 30px 30px 0 30px;
+    }
+
+    .hero-bottom-grid {
+        grid-template-columns: 1.2fr 0.8fr 1fr;
+        /* Keep same ratio */
+        gap: 25px;
+    }
+
+    /* COLUMN 1 */
+    .hero-coin-box {
+        height: 75px;
+        /* Slightly smaller on tablet */
+        padding: 12px;
+    }
+
+    .hero-text-box {
+        padding: 16px 18px 8px;
+        max-height: 160px;
+    }
+
+    .hero-text-box p {
+        font-size: 18px;
+    }
+
+    .quote-mark svg {
+        font-size: 55px;
+    }
+
+    /* COLUMN 2 & 3 */
+    .hero-bottom-fixed-image,
+    .full-height {
+        min-height: 230px;
+        max-height: 250px;
+    }
+
+    .hero-bottom-fixed-image {
+        padding: 10px;
+    }
+
+    .hero-bottom-bar-chart {
+        gap: 8px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE (up to 768px) - ONLY TEXT BOX SHOWS (NO CHANGES NEEDED - KEEPING AS IS)
+========================= */
+@media (max-width: 768px) {
+
+    /* TOP SIDE - UNCHANGED */
+    .hero-top {
+        height: auto;
+        padding: 80px 24px 60px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    /* BOTTOM SECTION - ONLY TEXT BOX */
+    .hero-bottom-section {
+        padding: 40px 16px 0;
+    }
+
+    .hero-bottom-bg {
+        width: 100%;
+        padding: 30px 20px 20px 20px;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .hero-bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* COLUMN 1 - ONLY TEXT BOX SHOWS */
+    .hero-coin-box {
+        display: none !important;
+    }
+
+    .hero-bottom-col-stack {
+        display: block;
+    }
+
+    .hero-text-box {
+        max-width: 100%;
+        margin: 0;
+        padding: 35px 25px 25px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        display: block;
+        max-height: none;
+        /* Remove max-height on mobile */
+    }
+
+    .hero-text-box p {
+        font-size: 24px;
+        text-align: center;
+        white-space: pre-line;
+        // margin-left: 5rem; 
+    }
+
+    .quote-mark svg {
+        font-size: 70px;
+    }
+
+    /* COLUMN 2 & 3 - HIDDEN */
+    .hero-bottom-col-image,
+    .hero-bottom-col-right {
+        display: none !important;
+    }
+}
+
+/* =========================
+   SMALL MOBILE RESPONSIVE (up to 480px) - NO CHANGES
+========================= */
+@media (max-width: 480px) {
+
+    /* TOP SIDE - UNCHANGED */
+    .hero-top {
+        padding: 60px 20px 50px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    /* BOTTOM SECTION - TEXT BOX ONLY */
+    .hero-bottom-section {
+        padding: 30px 12px 0;
+    }
+
+    .hero-bottom-bg {
+        padding: 24px 16px 16px 16px;
+        border-radius: 25px;
+    }
+
+    .hero-text-box {
+        padding: 30px 20px 20px;
+    }
+
+    .hero-text-box p {
+        font-size: 20px;
+    }
+
+    .quote-mark svg {
+        font-size: 60px;
+    }
+}
+
+/* =========================
+   HERO BUTTON RESPONSIVE – UNCHANGED
+========================= */
+@media (max-width: 1024px) {
+    .hero-btn {
+        width: 210px;
+        height: 52px;
+    }
+
+    .hero-btn-text {
+        font-size: 15px;
+        padding-left: 22px;
+    }
+
+    .hero-btn-arrow,
+    .hero-btn-fill {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-btn {
+        width: 160px;
+        height: 48px;
+    }
+
+    .hero-btn-text {
+        font-size: 14px;
+        padding-left: 20px;
+    }
+
+    .hero-btn-arrow,
+    .hero-btn-fill {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-btn {
+        width: 215px;
+        height: 44px;
+    }
+
+    .hero-btn-text {
+        font-size: 13px;
+        padding-left: 10px;
+    }
+
+    .hero-btn-arrow,
+    .hero-btn-fill {
+        width: 34px;
+        height: 36px;
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   REDUCE MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-btn,
+    .hero-bottom-col-text .hero-bottom-text-content,
+    .hero-bottom-fixed-image,
+    .hero-bottom-right-top,
+    .hero-bottom-right-bottom,
+    .hero-bottom-bar,
+    .financial-highlight,
+    .hero-subtitle,
+    .hero-coin-box,
+    .hero-text-box,
+    .full-height {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+
+/* =========================
+   NEW TABLET MEDIA QUERY (800px - 1070px)
+   TO MATCH NAVBAR BREAKPOINT
+========================= */
+@media (min-width: 800px) and (max-width: 1200px) {
+
+
+
+    .hero-wrapper {
+
+        min-height: 65vh;
+    }
+
+    /* ===== TOP HERO SECTION ===== */
+    .hero-top {
+        height: 55vh;
+        /* CHANGED: From 85vh to 55vh */
+        padding: 0 40px;
+    }
+
+    .hero-title {
+        font-size: 58px;
+        /* Keep existing tablet size */
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        /* Keep existing tablet size */
+    }
+
+    /* ===== HERO BUTTON ===== */
+    .hero-btn {
+        width: 270px;
+        /* Keep existing tablet width */
+        height: 55px;
+        /* CHANGED: From 52px to 55px */
+    }
+
+    .hero-btn-text {
+        font-size: 15px;
+        /* Keep existing */
+        padding-left: 22px;
+    }
+
+    .hero-btn-arrow {
+        width: 42px;
+        /* Keep existing */
+        height: 42px;
+        font-size: 18px;
+    }
+
+
+    .hero-btn-fill {
+
+        right: 3px;
+        top: 49.7%;
+        height: 45px;
+        width: 45px;
+
+    }
+
+    /* ===== BOTTOM SECTION ADJUSTMENTS (Optional) ===== */
+    .hero-bottom-bg {
+        width: 85%;
+        padding: 30px 30px 0 30px;
+    }
+
+    .hero-bottom-grid {
+        grid-template-columns: 1.2fr 0.8fr 1fr;
+        gap: 25px;
+    }
+
+    /* COLUMN 1 */
+    .hero-coin-box {
+        height: 75px;
+        padding: 12px;
+    }
+
+    .hero-text-box {
+        padding: 16px 18px 8px;
+        max-height: 160px;
+    }
+
+    .hero-text-box p {
+        font-size: 18px;
+    }
+
+    .quote-mark svg {
+        font-size: 55px;
+    }
+
+    /* COLUMN 2 & 3 */
+    .hero-bottom-fixed-image,
+    .full-height {
+        min-height: 230px;
+        max-height: 250px;
+    }
+
+    .hero-bottom-fixed-image {
+        padding: 10px;
+    }
+
+    .hero-bottom-bar-chart {
+        gap: 8px;
+    }
+}

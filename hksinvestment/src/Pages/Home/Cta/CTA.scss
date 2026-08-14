@@ -1,0 +1,672 @@
+@import "../../../Componenents/Fonts/fonts.scss";
+
+/* =========================
+   CTA SECTION
+========================= */
+.cta-section {
+  padding: 20px 20px;
+  background: linear-gradient(180deg, #D6C6F0 0%, #F7F5FB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 400px;
+  box-sizing: border-box;
+}
+
+/* ✅ MAIN CONTAINER – WITH PROPER BOX STYLES */
+.cta-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px 40px 40px;
+  text-align: center;
+  background: transparent;
+  border-radius: 60px 60px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HEADING WRAPPER – holds both desktop & mobile headings */
+.cta-headings {
+  display: block;
+}
+
+/* Desktop heading (default) */
+.desktop-heading {
+  display: block;
+}
+
+/* Mobile heading (hidden by default) */
+.mobile-heading {
+  display: none;
+}
+
+/* HEADING TEXT STYLES (applied to both) */
+.cta-container h2 {
+  font-size: 48px;
+  font-family: 'Heading', serif;
+  line-height: 1.3;
+  margin-bottom: 32px;
+  color: #1a1a1a;
+}
+
+.cta-container h2 span {
+  color: #5e2690;
+}
+
+/* ===== BUTTON – EXACT SAME AS ABOUT COMPONENT ===== */
+.cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 285px;
+  height: 56px;
+  background: #5e2690;
+  border: 2px solid #5e2690;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Content', serif;
+  outline: none;
+  margin: 0 auto;
+}
+
+.cta-btn-fill {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 49px;
+  width: 46px;
+  background: #ffffff;
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.cta-btn:hover .cta-btn-fill {
+  width: calc(100% - 4px);
+  right: 2px;
+}
+
+.cta-btn-text {
+  position: relative;
+  z-index: 2;
+  padding-left: 26px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: color 0.4s ease 0.25s;
+  white-space: nowrap;
+}
+
+.cta-btn:hover .cta-btn-text {
+  color: #5e2690;
+}
+
+.cta-btn-arrow {
+  position: relative;
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #5e2690;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: 2px;
+  transition: transform 0.2s ease;
+}
+
+.cta-btn:hover .cta-btn-arrow {
+  background: #ffffff;
+  color: #5e2690;
+  transform: rotate(-45deg);
+}
+
+/* =========================
+   CTA MODAL – COMPLETELY PRESERVED - NO CHANGES
+========================= */
+.cta-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+}
+
+.cta-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 90%;
+  max-width: 650px;
+  height: fit-content;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  z-index: 9999;
+  box-shadow: 0 25px 50px rgba(94, 38, 144, 0.2);
+  border: 1px solid #e9dff7;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    max-width: 90%;
+    padding: 30px;
+  }
+
+  @media (max-width: 480px) {
+    width: 85%;
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+}
+
+.cta-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f5f0fd;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5e2690;
+  font-size: 20px;
+  transition: all 0.2s ease;
+  z-index: 10000;
+
+  &:hover {
+    background: #5e2690;
+    color: white;
+    transform: rotate(90deg);
+  }
+}
+
+.cta-modal-title {
+  font-size: 32px;
+  font-family: 'Heading', serif;
+  color: #5e2690;
+  margin-bottom: 12px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+.cta-modal-subtitle {
+  font-size: 16px;
+  font-family: 'Content', serif;
+  color: #666;
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+/* =========================
+   CTA FORM STYLES – COMPLETELY PRESERVED - NO CHANGES
+========================= */
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cta-form-row-full {
+  width: 100%;
+}
+
+.cta-form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.cta-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.cta-form-group label {
+  font-family: 'Content', serif;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.required {
+  color: #ff4757;
+}
+
+.cta-form-input,
+.cta-form-textarea {
+  padding: 14px 18px;
+  border: 2px solid #e0d0f0;
+  border-radius: 12px;
+  font-family: 'Content', serif;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #faf7ff;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: #5e2690;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(94, 38, 144, 0.1);
+  }
+
+  &.error {
+    border-color: #ff4757;
+    background: #fff5f5;
+  }
+}
+
+.cta-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-message {
+  color: #ff4757;
+  font-family: 'Content', serif;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.cta-submit-btn {
+  background: #5e2690;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-family: 'Content', serif;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover:not(:disabled) {
+    background: #4a1f73;
+    color: white;
+    box-shadow: 0 10px 25px rgba(94, 38, 144, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.cta-submit-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-submit-btn:hover .cta-submit-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================
+   ANIMATIONS – SPAN GLOW
+========================= */
+.cta-container h2 span {
+  position: relative;
+}
+
+.cta-container h2 span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: rgba(233, 223, 247, 0.5);
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  animation: spanGlow 3s ease-in-out infinite;
+}
+
+@keyframes spanGlow {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* =========================
+   LARGE SCREENS (1900px - 2600px)
+========================= */
+@media screen and (min-width: 1900px) and (max-width: 2600px) {
+  .cta-container {
+    max-width: 1700px;
+  }
+}
+
+/* =========================
+   RESPONSIVE – UPDATED FOR VERTICAL CENTERING
+========================= */
+@media (max-width: 1024px) {
+  .cta-section {
+    padding: 100px 20px;
+    min-height: 350px;
+  }
+
+  .cta-container {
+    padding: 30px;
+  }
+
+  .cta-container h2 {
+    font-size: 40px;
+  }
+
+  .cta-btn {
+    width: 210px;
+    height: 52px;
+  }
+
+  .cta-btn-text {
+    font-size: 15px;
+    padding-left: 22px;
+  }
+
+  .cta-btn-arrow,
+  .cta-btn-fill {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .cta-btn-fill {
+    height: 42px;
+    width: 42px;
+    right: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 80px 16px;
+    min-height: 300px;
+  }
+
+  .cta-container {
+    padding: 30px 20px;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .cta-container h2 {
+    font-size: 32px;
+  }
+
+  /* ----- SWAP HEADINGS ON MOBILE ----- */
+  .desktop-heading {
+    display: none;
+  }
+
+  .mobile-heading {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta-section {
+    padding: 60px 16px;
+    min-height: 280px;
+  }
+
+  .cta-container h2 {
+    font-size: 28px;
+  }
+
+  .cta-btn {
+    width: 160px;
+    height: 48px;
+  }
+
+  .cta-btn-text {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  .cta-btn-arrow,
+  .cta-btn-fill {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .cta-btn-fill {
+    height: 38px;
+    width: 38px;
+    right: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 20px 12px;
+    min-height: 220px;
+  }
+
+  .cta-container {
+    padding: 20px 0px;
+  }
+
+  .cta-container h2 {
+    font-size: 24px;
+  }
+
+  .cta-btn {
+    width: 225px;
+    height: 44px;
+  }
+
+  .cta-btn-text {
+    font-size: 13px;
+    padding-left: 18px;
+  }
+
+  .cta-btn-arrow,
+  .cta-btn-fill {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .cta-btn-fill {
+    height: 34px;
+    width: 34px;
+    right: 2px;
+  }
+}
+
+/* =========================
+   REDUCE MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+  .cta-btn,
+  .cta-btn-fill,
+  .cta-btn-text,
+  .cta-btn-arrow,
+  .cta-container h2 span,
+  .cta-modal,
+  .cta-modal-overlay,
+  .cta-submit-btn {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .cta-btn:hover .cta-btn-fill {
+    width: 46px !important;
+    right: 2px !important;
+  }
+
+  .cta-btn:hover .cta-btn-text {
+    color: #ffffff !important;
+  }
+
+  .cta-btn:hover .cta-btn-arrow {
+    background: #ffffff !important;
+    color: #5e2690 !important;
+    transform: none !important;
+  }
+
+  .cta-container h2 span {
+    opacity: 1 !important;
+  }
+}
+
+
+
+
+
+
+
+/* =========================
+   NEW TABLET MEDIA QUERY (800px - 1070px)
+   FOR CTA SECTION - 3 LINES TEXT
+========================= */
+@media (min-width: 800px) and (max-width: 1200px) {
+  .cta-section {
+    padding: 80px 40px;
+    /* Equal padding on both sides */
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+  }
+
+  .cta-container {
+    max-width: 100%;
+    padding: 0 40px 40px 40px;
+    margin: 0 auto;
+  }
+
+  /* ===== HEADING - 3 LINES ON TABLET ===== */
+  .cta-headings {
+    display: block;
+  }
+
+  /* Hide desktop heading (2 lines) on tablet */
+  .desktop-heading {
+    display: none;
+  }
+
+  /* Show mobile heading (3 lines) on tablet */
+  .mobile-heading {
+    display: block;
+  }
+
+  .cta-container h2 {
+    font-size: 40px;
+    /* Keep existing tablet size */
+    line-height: 1.3;
+    margin-bottom: 32px;
+  }
+
+  .cta-container h2 span {
+    color: #5e2690;
+    display: inline-block;
+    /* Keep span inline with text */
+  }
+
+  /* ===== BUTTON - MATCHING HERO PATTERN ===== */
+  .cta-btn {
+    width: 270px;
+    /* Keep existing tablet width */
+    height: 55px;
+    /* CHANGED: From 52px to 55px */
+    margin: 0 auto;
+  }
+
+  .cta-btn-text {
+    font-size: 15px;
+    padding-left: 22px;
+  }
+
+  .cta-btn-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    margin-right: 2px;
+  }
+
+  .cta-btn-fill {
+    right: 2px;
+    top: 49.7%;
+    height: 45px;
+    /* From 42px to 45px */
+    width: 45px;
+    /* From 42px to 45px */
+  }
+
+  /* Ensure container has equal padding */
+  .cta-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  /* Adjust for larger screens within this range */
+  @media (min-width: 900px) {
+    .cta-container h2 {
+      font-size: 44px;
+      /* Slightly larger for bigger tablets */
+    }
+  }
+}

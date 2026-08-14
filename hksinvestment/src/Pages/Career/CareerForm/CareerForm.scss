@@ -1,0 +1,1253 @@
+@import "../../../Componenents/Fonts/fonts.scss";
+
+/* ===== SECTION ===== */
+.career-form-section {
+  padding: 100px 60px;
+  background: #f7f5fb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HEADER */
+.career-form-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.career-pill {
+  display: inline-block;
+  padding: 6px 18px;
+  background: #efe8fb;
+  border: 2px solid #7a3db8;
+  border-radius: 50px;
+  color: #7a3db8;
+  font-family: 'SubHeading', serif;
+  margin-bottom: 15px;
+}
+
+.career-form-header h2 {
+  font-size: 42px;
+  font-family: 'Heading', serif;
+  margin-bottom: 16px;
+  margin-top: 0px;
+  color: #1a1a1a;
+}
+
+.career-form-header h2 span {
+  color: #5e2690;
+  position: relative;
+}
+
+.career-form-header h2 span::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #5e2690;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.career-form-header h2:hover span::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.career-form-header p {
+  font-size: 18px;
+  font-family: 'Content', serif;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CONTENT LAYOUT */
+.career-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* LEFT SIDE - CONTACT INFO */
+.career-info {
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 10px 40px 40px 40px;
+  box-shadow: 0 10px 40px rgba(122, 61, 184, 0.1);
+  border: 2px solid #efe8fb;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.career-info-content {
+  width: 100%;
+}
+
+.career-info-content h3 {
+  font-size: 28px;
+  font-family: 'Heading', serif;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  margin-top: 0px;
+}
+
+/* ===== WHY JOIN US LIST ===== */
+.why-join-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.why-join-list li {
+  font-size: 16px;
+  font-family: 'Content', serif;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.why-join-list li:hover {
+  color: #5e2690;
+}
+
+.bullet-point {
+  color: #7a3db8;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* CAREER ITEMS */
+.career-items {
+  margin-bottom: 40px;
+}
+
+.career-item-link {
+  text-decoration: none;
+  display: block;
+}
+
+.career-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f9f6ff;
+  border-radius: 16px;
+  border: 1px solid #e6dcf7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 35px;
+}
+
+.career-item-icon {
+  width: 44px;
+  height: 44px;
+  background: #efe8fb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a3db8;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.career-item:hover .career-item-icon {
+  background: #7a3db8;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.career-item-text {
+  font-size: 16px;
+  font-family: 'Content', serif;
+  color: #333;
+  line-height: 1.5;
+  word-break: break-word;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* SOCIAL ICONS */
+.career-socials h4 {
+  font-size: 18px;
+  font-family: 'SubHeading', serif;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  background: #efe8fb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a3db8;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* RIGHT SIDE - FORM */
+.career-form-wrapper {
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 40px 40px 10px 40px;
+  box-shadow: 0 10px 40px rgba(122, 61, 184, 0.1);
+  border: 2px solid #efe8fb;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.career-form-container {
+  width: 100%;
+  height: 100%;
+}
+
+.career-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-family: 'SubHeading', serif;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group label svg {
+  color: #7a3db8;
+}
+
+.form-input {
+  padding: 14px 16px;
+  border: 2px solid #e6dcf7;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: 'Content', serif;
+  color: #333;
+  background: #f9f6ff;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #7a3db8;
+  box-shadow: 0 0 0 3px rgba(122, 61, 184, 0.1);
+}
+
+.form-input.error {
+  border-color: #e74c3c;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  gap: 30px;
+  padding: 8px 0;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-family: 'Content', serif;
+  color: #333;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #7a3db8;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 6px;
+  font-family: 'Content', serif;
+}
+
+/* ============================================= */
+/* ===== PHONE WITH MANUAL COUNTRY DROPDOWN ===== */
+/* ============================================= */
+.phone-group {
+  position: relative;
+}
+
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  border: 2px solid #e6dcf7;
+  border-radius: 12px;
+  background: #f9f6ff;
+  transition: all 0.3s ease;
+
+  &:focus-within {
+    border-color: #7a3db8;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(122, 61, 184, 0.1);
+  }
+
+  &.error {
+    border-color: #e74c3c;
+  }
+
+  /* Country Dropdown Button Container */
+  .country-dropdown {
+    flex-shrink: 0;
+
+    .country-select-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 10px 14px 16px;
+      background: transparent;
+      border: none;
+      border-right: 2px solid #e6dcf7;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: 'Content', serif;
+      color: #333;
+      transition: all 0.3s ease;
+      min-width: 90px;
+      height: 100%;
+
+      &:hover {
+        background: #efe8fb;
+      }
+
+      .country-flag {
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .country-code {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .dropdown-arrow {
+        font-size: 12px;
+        color: #7a3db8;
+        transition: transform 0.3s ease;
+        margin-left: 2px;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    /* Dropdown Overlay Menu Options Box */
+    .country-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #e6dcf7;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      overflow: hidden;
+      box-sizing: border-box;
+
+      .country-search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-bottom: 1px solid #e6dcf7;
+
+        .search-icon {
+          color: #999;
+          font-size: 16px;
+          flex-shrink: 0;
+        }
+
+        input {
+          width: 100%;
+          padding: 8px 0;
+          border: none;
+          outline: none;
+          font-size: 14px;
+          font-family: 'Content', serif;
+          background: transparent;
+
+          &::placeholder {
+            color: #999;
+          }
+        }
+      }
+
+      .country-list {
+        max-height: 220px;
+        overflow-y: auto;
+        padding: 4px 0;
+
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #f5f5f5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #7a3db8;
+          border-radius: 4px;
+        }
+
+        .country-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 16px;
+          width: 100%;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          font-family: 'Content', serif;
+          color: #333;
+          transition: all 0.2s ease;
+          text-align: left;
+
+          &:hover {
+            background: #f9f6ff;
+          }
+
+          &.active {
+            background: #efe8fb;
+            color: #5e2690;
+          }
+
+          .country-flag {
+            font-size: 20px;
+            flex-shrink: 0;
+          }
+
+          .country-name {
+            flex: 1;
+          }
+
+          .country-code {
+            color: #7a3db8;
+            font-weight: 600;
+            font-size: 13px;
+          }
+        }
+
+        .no-results {
+          padding: 20px;
+          text-align: center;
+          color: #999;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  /* Actual Numeric Input Node */
+  .phone-number-input {
+    flex: 1;
+    padding: 14px 16px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Content', serif;
+    color: #333;
+    background: transparent;
+    min-width: 0;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+}
+
+.phone-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f39c12;
+  font-size: 13px;
+  font-family: 'Content', serif;
+  margin-top: 6px;
+
+  svg {
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+}
+
+/* ===================== */
+/* SUBMIT BUTTON STYLES  */
+/* ===================== */
+.career-submit-btn {
+  margin-top: 16px;
+  padding: 14px 14px 14px 28px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-family: 'Content', serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background: #5e2690;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.career-submit-btn span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: #fff;
+  color: #5e2690;
+}
+
+.career-submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  color: #5e2690;
+  z-index: -1;
+  transition: left 0.4s ease;
+  border-radius: 50px;
+}
+
+.career-submit-btn:hover::after {
+  left: 0;
+}
+
+.career-submit-btn:hover {
+  color: #5e2690;
+  border: 2px solid #5e2690;
+}
+
+.career-submit-btn:hover span {
+  background: #5e2690;
+  color: #fff;
+}
+
+.career-submit-btn.submitting {
+  background: #5e2690 !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  pointer-events: none;
+  cursor: wait;
+  opacity: 1;
+}
+
+.career-submit-btn.submitting .spinner-wrap {
+  background: #fff !important;
+  color: #5e2690 !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.career-submit-btn.submitting .spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+.career-submit-btn .submit-text {
+  flex: 1;
+  text-align: left;
+  background: transparent !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  color: #fff;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.career-submit-btn:disabled:not(.submitting) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #5e2690;
+  color: #fff;
+  pointer-events: none;
+}
+
+.career-submit-btn:disabled:not(.submitting) span {
+  background: #fff;
+  color: #5e2690;
+  opacity: 0.8;
+}
+
+.career-submit-btn.submitting:hover {
+  background: #5e2690 !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.career-submit-btn.submitting:hover span {
+  background: #fff !important;
+  color: #5e2690 !important;
+}
+
+.career-submit-btn.submitting:hover::after {
+  left: -100% !important;
+}
+
+.career-submit-btn span svg {
+  transition: transform 0.3s ease;
+}
+
+.career-submit-btn:hover span svg {
+  transform: rotate(45deg);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.career-item-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.career-item:nth-child(2) .career-item-icon {
+  animation-delay: 0.2s;
+}
+
+.career-item:nth-child(3) .career-item-icon {
+  animation-delay: 0.4s;
+}
+
+/* =========================
+   RESPONSIVE LAYOUT BREAKPOINTS
+========================= */
+@media (max-width: 1200px) {
+  .career-content {
+    max-width: 1100px;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .career-form-section {
+    padding: 80px 40px;
+  }
+
+  .career-content {
+    gap: 40px;
+  }
+
+  .career-info,
+  .career-form-wrapper {
+    padding: 32px;
+  }
+
+  .career-form-header h2 {
+    font-size: 36px;
+  }
+
+  .career-item {
+    min-height: 76px;
+    padding: 14px;
+  }
+
+  .career-item-text {
+    font-size: 15px;
+  }
+}
+
+/* ===================================== */
+/* MOBILE DESIGN VARIANT (UP TO 768PX)   */
+/* ===================================== */
+@media (max-width: 768px) {
+  .career-form-section {
+    padding: 60px 20px;
+  }
+
+  .career-form-header {
+    margin-bottom: 40px;
+  }
+
+  .career-form-header h2 {
+    font-size: 32px;
+  }
+
+  .career-form-header p {
+    font-size: 16px;
+  }
+
+  .career-content {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .career-info,
+  .career-form-wrapper {
+    padding: 28px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .career-info-content h3 {
+    font-size: 24px;
+  }
+
+  .why-join-list li {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .career-item {
+    padding: 14px;
+    min-height: 72px;
+  }
+
+  .career-item-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .career-item-text {
+    font-size: 15px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .form-input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .career-submit-btn {
+    font-size: 16px;
+    padding: 12px 12px 12px 24px;
+  }
+
+  .career-submit-btn span {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Maintain Same Row Structure on Mobile Viewports */
+  .phone-input-wrapper {
+    flex-wrap: nowrap;
+    border-radius: 10px;
+    background: #ffffff;
+
+    .country-dropdown {
+      flex: 0 0 auto;
+      width: auto;
+      position: relative;
+
+      .country-select-btn {
+        width: auto;
+        padding: 12px 10px 12px 14px;
+        border-right: 2px solid #e6dcf7;
+        min-height: 48px;
+        white-space: nowrap;
+
+        .country-flag {
+          font-size: 20px;
+        }
+
+        .country-code {
+          font-size: 14px;
+        }
+
+        .dropdown-arrow {
+          font-size: 11px;
+        }
+      }
+
+      /* Modal Popover Configurations */
+      .country-dropdown-menu {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        min-width: 90%;
+        max-width: 400px;
+        max-height: 80vh;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+        .country-list {
+          max-height: 60vh;
+        }
+      }
+    }
+
+    .phone-number-input {
+      flex: 1;
+      padding: 12px 14px;
+      font-size: 15px;
+      width: auto;
+      min-width: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .career-content {
+    gap: 70px !important;
+  }
+
+  .career-form-section {
+    padding: 50px 16px 80px 16px;
+  }
+
+  .career-form-header h2 {
+    font-size: 28px;
+  }
+
+  .career-pill {
+    padding: 5px 16px;
+    font-size: 14px;
+  }
+
+  .career-info,
+  .career-form-wrapper {
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+
+  .career-info-content h3 {
+    font-size: 22px;
+  }
+
+  .why-join-list li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .career-item {
+    flex-direction: row;
+    gap: 12px;
+    min-height: 30px;
+    padding: 12px;
+  }
+
+  .career-item-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .career-item-text {
+    font-size: 14px;
+    min-height: 36px;
+  }
+
+  .social-icons {
+    justify-content: left;
+    gap: 12px;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+  }
+
+  .radio-group {
+    gap: 20px;
+  }
+
+  .radio-label {
+    font-size: 15px;
+  }
+
+  .career-submit-btn {
+    font-size: 15px;
+    padding: 10px 10px 10px 20px;
+  }
+
+  .career-submit-btn span {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Compact Scale Down for Ultra Small Mobile Screens */
+  .phone-input-wrapper {
+    border-radius: 8px;
+
+    .country-dropdown {
+      .country-select-btn {
+        padding: 10px 8px 10px 12px;
+        min-height: 44px;
+        font-size: 14px;
+
+        .country-flag {
+          font-size: 18px;
+        }
+
+        .country-code {
+          font-size: 13px;
+        }
+
+        .dropdown-arrow {
+          font-size: 10px;
+        }
+      }
+
+      .country-dropdown-menu {
+        .country-search {
+          padding: 8px 12px;
+
+          input {
+            font-size: 13px;
+          }
+        }
+
+        .country-list {
+          .country-item {
+            padding: 8px 12px;
+            font-size: 13px;
+
+            .country-flag {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .phone-number-input {
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+  }
+}
+
+/* ======================================================== */
+/* ===== NEW MID-TIER TABLET RESPONSIVE (800PX - 1200PX) ===== */
+/* ======================================================== */
+@media (min-width: 800px) and (max-width: 1200px) {
+  .career-form-section {
+    padding: 80px 20px;
+  }
+
+  .career-content {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+
+  .career-form-header {
+    margin-bottom: 40px;
+  }
+
+  .career-form-header h2 {
+    font-size: 36px;
+  }
+
+  .career-form-header p {
+    font-size: 17px;
+  }
+
+  .career-pill {
+    margin-bottom: 12px;
+  }
+
+  .career-info {
+    padding: 35px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .career-info-content h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .why-join-list {
+    margin-bottom: 30px;
+
+    li {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .career-items {
+    margin-bottom: 30px;
+  }
+
+  .career-item {
+    padding: 14px;
+    margin-bottom: 16px;
+    min-height: auto;
+  }
+
+  .career-item-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .career-item-text {
+    font-size: 15px;
+    min-height: 40px;
+  }
+
+  .career-socials {
+    margin-top: 10px;
+
+    h4 {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .social-icons {
+    gap: 12px;
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
+
+  .career-form-wrapper {
+    padding: 35px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .career-form {
+    gap: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+    margin-bottom: 6px;
+
+    svg {
+      font-size: 16px;
+    }
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .radio-group {
+    gap: 30px;
+    padding: 4px 0;
+  }
+
+  .radio-label {
+    font-size: 15px;
+
+    input[type="radio"] {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .career-submit-btn {
+    font-size: 16px;
+    padding: 12px 12px 12px 24px;
+    margin-top: 16px;
+
+    span {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .error-message {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .career-info,
+  .career-form-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .phone-input-wrapper {
+    .country-dropdown {
+      .country-select-btn {
+        padding: 10px 8px 10px 14px;
+        min-width: 80px;
+      }
+    }
+
+    .phone-number-input {
+      padding: 12px 14px;
+      font-size: 15px;
+    }
+  }
+}
+
+/* =========================
+   REDUCE MOTION OVERRIDES
+========================= */
+@media (prefers-reduced-motion: reduce) {
+
+  .career-item-icon,
+  .career-submit-btn,
+  .social-icon,
+  .career-item,
+  .form-input,
+  .why-join-list li,
+  .spinner {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .career-submit-btn:hover::after {
+    left: -100% !important;
+  }
+
+  .career-item:hover .career-item-icon {
+    background: #efe8fb !important;
+    color: #7a3db8 !important;
+    transform: none !important;
+  }
+
+  .career-form-header h2 span::after {
+    display: none !important;
+  }
+
+  .why-join-list li:hover {
+    color: #666 !important;
+  }
+}
+
+/* ======================================= */
+/* FIX STICKY HOVER GLITCHES ON TOUCH DEVICES */
+/* ======================================= */
+@media (hover: none) and (pointer: coarse) {
+  .career-submit-btn:hover {
+    background: #5e2690 !important;
+    color: #fff !important;
+    border-color: transparent !important;
+  }
+
+  .career-submit-btn:hover span {
+    background: #fff !important;
+    color: #5e2690 !important;
+  }
+
+  .career-submit-btn:hover::after {
+    left: -100% !important;
+  }
+}

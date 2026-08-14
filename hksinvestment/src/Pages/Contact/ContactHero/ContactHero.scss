@@ -1,0 +1,446 @@
+/* ===== FONT IMPORT ===== */
+@import "../../../Componenents/Fonts/fonts.scss";
+
+/* ===== ROOT WRAPPER ===== */
+.contact-hero-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+            #7485e1,
+            #d7c0f8,
+            #e9dff7,
+            #ffffff,
+            #ffffff);
+    overflow-x: hidden;
+
+    @media (max-width: 768px) {
+        min-height: 50vh;
+    }
+}
+
+/* ===== TOP HERO SECTION ===== */
+.contact-hero-top {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 80px 24px 60px;
+    }
+}
+
+.contact-hero-content {
+    text-align: center;
+    max-width: 1100px;
+    margin-top: 40px;
+    font-family: 'Heading', serif;
+}
+
+/* ===== TITLE STYLES ===== */
+.contact-hero-title {
+    font-size: 75px;
+    font-weight: 800;
+    line-height: 1.45;
+    position: relative;
+    color: #000;
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        font-size: 58px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 42px;
+        line-height: 1.3;
+        // text-transform: uppercase;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 32px;
+    }
+}
+
+/* ===== HIGHLIGHTED WORD - DEFAULT (DESKTOP) ===== */
+.contact-highlight {
+    position: relative;
+    padding: 2px 22px;
+    border: 2px solid #7a3db8;
+    border-radius: 16px;
+    color: #5e2690;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    background: rgba(122, 61, 184, 0.1);
+    cursor: default;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+        padding: 2px 12px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 2px 8px;
+    }
+}
+
+/* ===== MOBILE HIGHLIGHT - NO BG, NO BORDER ===== */
+.contact-highlight-mobile {
+    @media (max-width: 768px) {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        color: #5e2690;
+        /* keep the purple color */
+        box-shadow: none !important;
+    }
+}
+
+/* Dots - hidden by default (only for desktop) */
+.contact-highlight::before,
+.contact-highlight::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #7a3db8;
+    border-radius: 50%;
+    background: #7a3db8;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.contact-highlight::before {
+    top: -6px;
+    left: 22px;
+
+    @media (max-width: 768px) {
+        left: 12px;
+    }
+
+    @media (max-width: 480px) {
+        left: 8px;
+    }
+}
+
+.contact-highlight::after {
+    bottom: -6px;
+    right: 22px;
+
+    @media (max-width: 768px) {
+        right: 12px;
+    }
+
+    @media (max-width: 480px) {
+        right: 8px;
+    }
+}
+
+/* Hide dots on mobile for highlighted words */
+.contact-highlight-mobile::before,
+.contact-highlight-mobile::after {
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+/* Show dots on hover (desktop only) */
+.contact-highlight:hover::before,
+.contact-highlight:hover::after {
+    opacity: 1;
+}
+
+/* Hover effect (desktop only) */
+.contact-highlight:hover {
+    background: rgba(122, 61, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Disable hover transform on mobile for highlighted words */
+.contact-highlight-mobile:hover {
+    @media (max-width: 768px) {
+        transform: none !important;
+    }
+}
+
+/* ===== SUBTITLE ===== */
+.contact-hero-subtitle {
+    margin-top: 18px;
+    font-size: 22px;
+    font-family: 'Content', serif;
+    position: relative;
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+    }
+}
+
+.contact-hero-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #5e2690, transparent);
+    transition: width 0.6s ease;
+}
+
+.contact-hero-subtitle:hover::after {
+    width: 200px;
+}
+
+/* ===== BUTTON ===== */
+.contact-hero-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 260px;
+    height: 60px;
+    background: #5e2690;
+    border: 2px solid #5e2690;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Content', serif;
+    outline: none;
+    margin-top: 28px;
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        width: 240px;
+    }
+
+    @media (max-width: 768px) {
+        width: 180px;
+        height: 52px;
+    }
+
+    @media (max-width: 480px) {
+        width: 205px;
+        height: 48px;
+    }
+}
+
+.contact-hero-btn-fill {
+    position: absolute;
+    right: 3px;
+    top: 51%;
+    transform: translateY(-50%);
+    height: 52px;
+    width: 50px;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+
+    @media (max-width: 768px) {
+        width: 42px;
+        height: 42px;
+    }
+
+    @media (max-width: 480px) {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.contact-hero-btn:hover .contact-hero-btn-fill {
+    width: calc(100% - 4px);
+    right: 2px;
+}
+
+.contact-hero-btn-text {
+    position: relative;
+    z-index: 2;
+    padding-left: 26px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: color 0.4s ease 0.25s;
+    white-space: nowrap;
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        font-size: 16px;
+        padding-left: 22px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        padding-left: 20px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        padding-left: 16px;
+    }
+}
+
+.contact-hero-btn:hover .contact-hero-btn-text {
+    color: #5e2690;
+}
+
+.contact-hero-btn-arrow {
+    position: relative;
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #5e2690;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 2px;
+    transition: transform 0.2s ease;
+
+    @media (max-width: 768px) {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+.contact-hero-btn:hover .contact-hero-btn-arrow {
+    background: #ffffff;
+    color: #5e2690;
+    transform: rotate(-45deg);
+}
+
+/* ===== REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-hero-btn,
+    .contact-highlight,
+    .contact-hero-subtitle {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.desktop-only {
+    display: inline;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+
+
+
+
+/* =========================
+   NEW TABLET MEDIA QUERY (800px - 1070px)
+   FOR CONTACT HERO - MATCHING EXACT PATTERN
+========================= */
+@media (min-width: 800px) and (max-width: 1250px) {
+
+    .contact-hero-wrapper {
+        min-height: 65vh;
+    }
+
+    /* ===== TOP HERO SECTION ===== */
+    .contact-hero-top {
+        height: 55vh;
+        padding: 0 40px;
+    }
+
+    .contact-hero-title {
+        font-size: 58px;
+        /* Keep existing tablet size */
+    }
+
+    .contact-hero-subtitle {
+        font-size: 20px;
+        /* Keep existing tablet size */
+    }
+
+    /* ===== HERO BUTTON ===== */
+    .contact-hero-btn {
+        width: 240px;
+        /* Keep existing tablet width */
+        height: 55px;
+        /* CHANGED: To match pattern */
+    }
+
+    .contact-hero-btn-text {
+        font-size: 16px;
+        /* Keep existing tablet size */
+        padding-left: 22px;
+    }
+
+    .contact-hero-btn-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    /* UPDATED button fill values - exactly as specified */
+    .contact-hero-btn-fill {
+        right: 3px;
+        top: 49.7%;
+        height: 45px;
+        /* From existing to 45px */
+        width: 45px;
+        /* From existing to 45px */
+    }
+
+    /* ===== HIGHLIGHT WORD STYLING ===== */
+    .contact-highlight {
+        padding: 2px 18px;
+        /* Slightly smaller for tablet */
+    }
+
+    /* Dots positioning for tablet */
+    .contact-highlight::before {
+        top: -6px;
+        left: 18px;
+    }
+
+    .contact-highlight::after {
+        bottom: -6px;
+        right: 18px;
+    }
+
+
+    .newtabletbr {
+        display: inline !important;
+        display: block !important;
+    }
+}
+
+
+
+
+
+
+.newtabletbr {
+    display: none;
+
+
+    @media (min-width: 800px) and (max-width: 1250px) {
+
+        display: block !important;
+        display: inline !important;
+    }
+
+}

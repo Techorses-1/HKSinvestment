@@ -1,0 +1,46 @@
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+
+    .admin-content {
+        flex: 1;
+        margin-left: 260px;
+        transition: margin-left 0.3s ease;
+        background: #f7f5fb;
+        position: relative;
+        min-width: 0; // 🔥 CRITICAL: allows content to shrink below its intrinsic width
+        width: 100%;
+
+        &.collapsed {
+            margin-left: 80px;
+        }
+
+        &.mobile {
+            margin-left: 0;
+            padding-top: 60px; // space for fixed hamburger button
+        }
+
+        .mobile-menu-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            background: #5e2690;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+            &:hover {
+                background: #7a3db8;
+            }
+        }
+    }
+}
