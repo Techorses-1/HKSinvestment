@@ -28,7 +28,7 @@ const NotFound = () => {
                         <FiTrendingDown /> Market Alert
                     </div>
 
-                    <h1>This Investment Didn't Exist</h1>
+                    <h1>This Investment Didn't Exist!</h1>
 
                     <p>
                         The page you're trying to reach is no longer available or never
