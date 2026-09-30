@@ -112,7 +112,7 @@ const Navbar = () => {
 
           {/* PRIVACY POLICY - MOBILE ONLY */}
           <NavLink to="/privacypolicy" onClick={closeMenu} className="mobile-privacy-link">
-            Privacy Policy
+            Privacy Policy.
           </NavLink>
         </div>
       </div>

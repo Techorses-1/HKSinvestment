@@ -62,7 +62,7 @@ app.use('/review', reviewRoutes);
 
 // Test route
 app.get("/", (req, res) => {
-    res.send("HKS Investment Backend Updated Running...");
+    res.send("New HKS Investment Backend Updated Running...");
 });
 
 // Error handling middleware
